@@ -4,10 +4,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERP</title>
+    <script src="index.js" type="module"></script>
+
+    <style>
+        /* input[type="radio"] {display:none;} */
+        label {color:gray;}
+        input:checked { padding:0.5rem; background-color: blue; color:red;}
+    </style>
+    <div>
+        <form>
+            <label for="12sar1">1</label><input type="radio" value="1" name="12sar" id="12sar1">
+            <label for="12sar2">2</label><input type="radio" value="2" name="12sar" id="12sar2">
+            <label for="12sar3">3</label><input type="radio" value="3" name="12sar" id="12sar3">
+            <label for="12sar4">4</label><input type="radio" value="4" name="12sar" id="12sar4">
+        </form>
+    </div>
+
 </head>
 <body>
     <erp-appointment></erp-appointment>
-    <script src="index.js" type="module"></script>
-    <script src="func.js"></script>
 </body>
 </html>

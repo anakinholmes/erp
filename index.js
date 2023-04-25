@@ -192,23 +192,7 @@ template.innerHTML = `
         border-radius: 10px;
         z-index: -1;
     }
-/*     
-    .text-field {
-        padding: 10px;
-        height: 50px;
-        width: 200px;
-        border: 1px solid #f0f0f0;
-        border-radius: 10px;
-        margin: 0px 10px 0 0;
-    } */
-/*     
-    .title {
-        font-size: 1emem;
-    }
-    
-    .subtitle {
-        font-size: 1.1em;
-    } */
+ 
     
     /* Calendar */
     
@@ -231,13 +215,13 @@ template.innerHTML = `
         padding: 10px;
     } 
      */
-    #currentDate{
-      text-align:center;
-      font-size:calc(var(--bs-font-size)+8px);
-    }
+    // #currentDate{
+    //   text-align:center;
+    //   font-size:calc(var(--bs-font-size)+8px);
+    // }
 
     .calendar {
-        height: 310px;
+        height: 345px;
         width: 310px;
         border-radius: 18px;
         background: #ffffff;
@@ -257,10 +241,7 @@ template.innerHTML = `
     }
     
     .month {
-        font-size: 0.7em;
-    }
-    h1{
-        font-size: calc(var(--bs-font-size) + var(--bs-font-size));
+        font-size: calc(var(--bs-font-size) );
     }
     .icon {
         padding: 10px;
@@ -404,8 +385,8 @@ template.innerHTML = `
                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 1.25C9.41421 1.25 9.75 1.58579 9.75 2V3.26061C10.4192 3.25 11.1628 3.25 11.9889 3.25H12.0111C12.8372 3.25 13.5808 3.25 14.25 3.26061V2C14.25 1.58579 14.5858 1.25 15 1.25C15.4142 1.25 15.75 1.58579 15.75 2V3.31358C17.2619 3.40837 18.4234 3.65335 19.3798 4.34815C19.8679 4.70281 20.2972 5.13209 20.6518 5.62023C21.4537 6.7239 21.6564 8.10088 21.7206 9.97432C21.75 10.8315 21.75 11.8289 21.75 12.989V13.011C21.75 14.1711 21.75 15.1685 21.7206 16.0257C21.6564 17.8991 21.4537 19.2761 20.6518 20.3798C20.2972 20.8679 19.8679 21.2972 19.3798 21.6518C18.2761 22.4537 16.8991 22.6564 15.0257 22.7206C14.1684 22.75 13.171 22.75 12.0108 22.75H11.9547C10.1182 22.75 8.67861 22.75 7.53648 22.6263C6.37094 22.5 5.42656 22.2377 4.62024 21.6518C4.13209 21.2972 3.70281 20.8679 3.34815 20.3798C2.76232 19.5734 2.50001 18.6291 2.37373 17.4635C2.24999 16.3214 2.24999 14.8818 2.25 13.0452L2.25 12.9889C2.25 11.8289 2.25 10.8315 2.27937 9.97432C2.34356 8.10087 2.5463 6.7239 3.34815 5.62023C3.70281 5.13209 4.13209 4.70281 4.62024 4.34815C5.57655 3.65335 6.73808 3.40837 8.25 3.31358V2C8.25 1.58579 8.58579 1.25 9 1.25ZM8.25 4.81725C6.88795 4.91092 6.10177 5.12585 5.50191 5.56168C5.14111 5.82382 4.82382 6.14111 4.56168 6.50191C4.12585 7.10177 3.91092 7.88795 3.81725 9.25H20.1827C20.0891 7.88795 19.8741 7.10177 19.4383 6.50191C19.1762 6.14111 18.8589 5.82382 18.4981 5.56168C17.8982 5.12585 17.1121 4.91092 15.75 4.81725V5C15.75 5.41421 15.4142 5.75 15 5.75C14.5858 5.75 14.25 5.41421 14.25 5V4.76079C13.5904 4.75005 12.8476 4.75 12 4.75C11.1524 4.75 10.4096 4.75005 9.75 4.76079V5C9.75 5.41421 9.41421 5.75 9 5.75C8.58579 5.75 8.25 5.41421 8.25 5V4.81725ZM20.2392 10.75H3.76079C3.75005 11.4096 3.75 12.1524 3.75 13C3.75 14.8916 3.75103 16.25 3.865 17.302C3.97745 18.3399 4.19259 18.9901 4.56168 19.4981C4.82382 19.8589 5.14111 20.1762 5.50191 20.4383C6.00992 20.8074 6.66013 21.0225 7.69805 21.135C8.74999 21.249 10.1084 21.25 12 21.25C12.8483 21.25 13.5918 21.2499 14.2518 21.2392C14.2562 20.7645 14.271 20.4151 14.3208 20.1005C14.7105 17.6401 16.6401 15.7105 19.1005 15.3208C19.4151 15.271 19.7645 15.2562 20.2392 15.2518C20.25 14.5918 20.25 13.8483 20.25 13C20.25 12.1524 20.25 11.4096 20.2392 10.75ZM20.1826 16.7528C19.7776 16.7575 19.5402 16.7699 19.3352 16.8023C17.5166 17.0904 16.0904 18.5166 15.8023 20.3352C15.7699 20.5402 15.7575 20.7776 15.7528 21.1826C17.1131 21.0888 17.8986 20.8738 18.4981 20.4383C18.8589 20.1762 19.1762 19.8589 19.4383 19.4981C19.8738 18.8986 20.0888 18.1131 20.1826 16.7528Z" fill="currentColor" />
                            </svg>
                            Огноо</label>
-                              <!-- <div class="calendar-assets">
-                                  <h1 id="currentDate"></h1>
+                               <!-- <div class="calendar-assets">
+                                   <h1 id="currentDate"></h1>
                                    
                               </div> -->
                               <div class="calendar shadow-gray-drop" id="table">
@@ -413,7 +394,7 @@ template.innerHTML = `
                                   <div class="month" id="month-header">
                                   </div>
                                   <div class="buttons">
-                                    <button class="icon" onclick="prevMonth()"><</button>
+                                    <button class="icon"><</button>
                                     <button class="icon" onclick="nextMonth()">></button>
                                   </div>
                                 </div>
@@ -429,34 +410,34 @@ template.innerHTML = `
                                 <div class="row btn-group" >
                                   <div class="col">
                                     <div class="d-flex flex-wrap" id="timep"> 
-                                      <button class="btn timebtn btn-primary active" value="8:30">8:30 AM</button>
-                                      <button class="btn timebtn btn-primary" value="8:50">8:50 AM</button>
-                                      <button class="btn timebtn btn-primary" value="9:10">9:10 AM</button>
-                                      <button class="btn timebtn btn-primary" value="9:30">9:30 AM</button>
-                                      <button class="btn timebtn btn-primary" value="9:50">9:50 AM</button>
-                                      <button class="btn timebtn btn-primary" value="10:10">10:10 AM</button>
-                                      <button class="btn timebtn btn-primary" value="10:30">10:30 AM</button>
-                                      <button class="btn timebtn btn-primary" value="10:50">10:50 AM</button>
-                                      <button class="btn timebtn btn-primary" value="11:10">11:10 AM</button>
-                                      <button class="btn timebtn btn-primary" value="11:30">11:30 AM</button>
-                                      <button class="btn timebtn btn-primary" value="11:50">11:50 AM</button>
-                                      <button class="btn timebtn btn-primary" value="12:10">12:10 PM</button>
+                                      <button class="btn timebtn btn-outline-primary " value="8:30">8:30 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="8:50">8:50 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="9:10">9:10 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="9:30">9:30 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="9:50">9:50 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="10:10">10:10 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="10:30">10:30 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="10:50">10:50 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="11:10">11:10 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="11:30">11:30 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="11:50">11:50 AM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="12:10">12:10 PM</button>
                                     </div>
                                   </div>
                                   <div class="col">
                                     <div class="d-flex flex-wrap" id="timep">  
-                                      <button class="btn timebtn btn-primary" value="12:30">12:30 PM</button>
-                                      <button class="btn timebtn btn-primary" value="12:50">12:50 PM</button>
-                                      <button class="btn timebtn btn-primary" value="13:10">13:10 PM</button>
-                                      <button class="btn timebtn btn-primary" value="14:30">14:30 PM</button>
-                                      <button class="btn timebtn btn-primary" value="14:50">14:50 PM</button>
-                                      <button class="btn timebtn btn-primary" value="15:10">15:10 PM</button>
-                                      <button class="btn timebtn btn-primary" value="15:30">15:30 PM</button>
-                                      <button class="btn timebtn btn-primary" value="15:50">15:50 PM</button>
-                                      <button class="btn timebtn btn-primary" value="16:10">16:10 PM</button>
-                                      <button class="btn timebtn btn-primary" value="16:30">16:30 PM</button>
-                                      <button class="btn timebtn btn-primary" value="16:50">16:50 PM</button>
-                                      <button class="btn timebtn btn-primary" value="17:10">17:10 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="12:30">12:30 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="12:50">12:50 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="13:10">13:10 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="14:30">14:30 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="14:50">14:50 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="15:10">15:10 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="15:30">15:30 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="15:50">15:50 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="16:10">16:10 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="16:30">16:30 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="16:50">16:50 PM</button>
+                                      <button class="btn timebtn btn-outline-primary" value="17:10">17:10 PM</button>
                                     </div>
                                   </div>
                                 </div>
@@ -487,6 +468,12 @@ template.innerHTML = `
 class ErpAppointment extends HTMLElement{
     constructor(){
         super();
+
+        this.months = [
+            "January","February","March","April","May","June","July", "Avgust","Setember", "October","November","December"];
+        this.weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        this.date = new Date(); 
+        this.newDay = ' ';
         const shadowRoot = this.attachShadow({mode:'open'});
         shadowRoot.appendChild( template.content.cloneNode(true));
         const linkEl = document.createElement('link');
@@ -496,174 +483,14 @@ class ErpAppointment extends HTMLElement{
 
         const container = shadowRoot.getElementById('container');
         container.addEventListener('click', this.handleButtonClick);
+
         
         shadowRoot.querySelector('.icon:first-child').addEventListener('click', this.prevMonth.bind(this));
         shadowRoot.querySelector('.icon:last-child').addEventListener('click', this.nextMonth.bind(this));
 
-        const months = [
-            "January","February","March","April","May","June","July", "Avgust","Setember", "October","November","December"];
-        const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-        
-        let date = new Date(); 
-        
-        function getCurrentDate(element, asString) {
-            if (element) {
-                if (asString) {
-                    return element.textContent = weekdays[date.getDay()] + date.getDate()  + months[date.getMonth()]  + date.getFullYear();
-                }
-                return element.value = date.toISOString().substr(0, 10);
-            }
-            return date;
-        }
 
-        function generateCalendar() {
-            const shadowRoot = element.shadowRoot;
-            // const calendar = shadowRoot.getElementById('calendar')
-            // if (calendar) {
-            //     calendar.remove();
-            // }
-            const table = document.createElement("table");
-            table.id = "calendar";
-         
-            const trHeader = document.createElement('tr');
-            trHeader.className = 'weekends';
-            weekdays.map(week => {
-                const th = document.createElement('th');
-                const w = document.createTextNode(week.substring(0, 3));
-                th.appendChild(w);
-                trHeader.appendChild(th);
-            });
-         
-            table.appendChild(trHeader);
-         
-            const weekDay = new Date(
-                date.getFullYear(),
-                date.getMonth(),
-                0
-            ).getDay();
-         
-            const lastDay = new Date(
-                date.getFullYear(),
-                date.getMonth() + 1,
-                0
-            ).getDate();
-        
-            let tr = document.createElement("tr");
-            let td = '';
-            let empty = '';
-            let btn = document.createElement('div');
-            let week = 0;
-         
-            while (week < weekDay) {
-                td = document.createElement("td");
-                empty = document.createTextNode(' ');
-                td.appendChild(empty);
-                tr.appendChild(td);
-                week++;
-            }
-        
-            for (let i = 1; i <= lastDay;) {
-                while (week < 7) {
-                    td = document.createElement('td');
-                    let text = document.createTextNode(i);
-                    btn = document.createElement('div');
-                    btn.className = "btn-day";
-                    btn.addEventListener('click', function () { changeDate(this) });
-                    week++;
-        
-                    if (i <= lastDay) {
-                        if (isDateBeforeCurrentDate(date.getFullYear(), date.getMonth(), i+1)) {
-                            btn.appendChild(text);
-                            btn.classList.add('disabled');
-                        } 
-                        else {
-                            btn.appendChild(text);
-                        }
-                        td.appendChild(btn)
-                        i++;
-                    } else {
-                        text = document.createTextNode(' ');
-                        td.appendChild(text);
-                    }
-                    tr.appendChild(td);
-                }
-                table.appendChild(tr);
-        
-                tr = document.createElement("tr");
-        
-                week = 0;
-            }
-            shadowRoot.appendChild(table); // Append table element to Shadow Root
-            changeActive();
-            changeHeader(date);
-            document.getElementById('date').textContent = date;
-            getCurrentDate(document.getElementById("currentDate"), true);
-            getCurrentDate(document.getElementById("date"), false);
-            shadowRoot.getElementById('month-header').innerHTML = months[date.getMonth()].substring(0, 3) + ' ' + date.getFullYear();
-        }
-
-        // function setDate(form) {
-        //     let newDate = new Date(form.date.value);
-        //     date = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate()+1 );
-        //     generateCalendar();
-        //     return false;
-        // }
-         
-        function changeHeader(dateHeader) {
-            const month = document.getElementById("month-header");
-            if (month.childNodes[0]) {
-                month.removeChild(month.childNodes[0]);
-            }
-            const headerMonth = document.createElement("h1");
-            const textMonth = document.createTextNode(months[dateHeader.getMonth()].substring(0, 3) + " " + dateHeader.getFullYear());
-            headerMonth.appendChild(textMonth);
-            month.appendChild(headerMonth);
-        }
-        
-         
-        function changeActive() {
-            let btnList = document.querySelectorAll('div.active');
-            btnList.forEach(btn => {
-                btn.classList.remove('active');
-            });
-            btnList = document.getElementsByClassName('btn-day');
-            for (let i = 0; i < btnList.length; i++) {
-                const btn = btnList[i];
-                if (btn.textContent === (date.getDate()).toString()) {
-                    btn.classList.add('active');
-                }
-            }
-        }
-        // function resetDate() {
-        //     date = new Date();
-        //     generateCalendar();
-        // }
-         
-        function changeDate(div) {
-            let newDay = parseInt(div.textContent);
-            date = new Date(date.getFullYear(), date.getMonth(), newDay);
-            generateCalendar(date);
-        } 
-        
-        function isDateBeforeCurrentDate(year, month, day) {
-            const currentDate = new Date();
-            const selectedDate = new Date(year, month, day);
-            return selectedDate < currentDate;
-        }
-
-        
-        
-        // function prevDay() {
-        //     date = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 1);
-        //     generateCalendar();
-        // }
-        
-        // function nextDay() {
-        //     date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
-        //     generateCalendar();
-        // }
- 
     }   
+
     handleButtonClick = (event) => {
         const buttons = this.shadowRoot.querySelectorAll('.btn');
         buttons.forEach(button => {
@@ -672,16 +499,180 @@ class ErpAppointment extends HTMLElement{
         const clickedButton = event.target;
         clickedButton.classList.add('active');
     }
+    
+    //  getCurrentDate(element, asString) {
+    //     if (element) {
+    //         if (asString) {
+    //             return element.textContent = weekdays[date.getDay()] + date.getDate()  + months[date.getMonth()]  + date.getFullYear();
+    //         }
+    //         return element.value = date.toISOString().substr(0, 10);
+    //     }
+    //     return date;
+    // }
+
+    generateCalendar() {
+        const calendar = this.shadowRoot.getElementById('calendar')
+        if (calendar) {
+            calendar.remove();
+        }
+        const table = document.createElement("table");
+        table.id = "calendar";
+     
+        const trHeader = document.createElement('tr');
+        trHeader.className = 'weekends';
+        this.weekdays.map(week => {
+            const th = document.createElement('th');
+            const w = document.createTextNode(week.substring(0, 3));
+            th.appendChild(w);
+            trHeader.appendChild(th);
+        });
+     
+        table.appendChild(trHeader);
+     
+        const weekDay = new Date(
+            this.date.getFullYear(),
+            this.date.getMonth(),
+            0
+        ).getDay();
+     
+        const lastDay = new Date(
+            this.date.getFullYear(),
+            this.date.getMonth() + 1,
+            0
+        ).getDate();
+    
+        let tr = document.createElement("tr");
+        let td = '';
+        let empty = '';
+        let btn = document.createElement('div');
+        let week = 0;
+     
+        while (week < weekDay) {
+            td = document.createElement("td");
+            empty = document.createTextNode(' ');
+            td.appendChild(empty);
+            tr.appendChild(td);
+            week++;
+        }
+    
+        for (let i = 1; i <= lastDay;) {
+            while (week < 7) {
+                td = document.createElement('td');
+                let text = document.createTextNode(i);
+                btn = document.createElement('div');
+                btn.className = "btn-day";
+                // btn.addEventListener('click',this.changeDate.bind(this));
+                week++;
+    
+                if (i <= lastDay) {
+                    if (this.isDateBeforeCurrentDate(this.date.getFullYear(), this.date.getMonth(), i+1)) {
+                        btn.appendChild(text);
+                        btn.classList.add('disabled');
+                    } 
+                    else {
+                        btn.appendChild(text);
+                    }
+                    td.appendChild(btn)
+                    i++;
+                } else {
+                    text = document.createTextNode(' ');
+                    td.appendChild(text);
+                }
+                tr.appendChild(td);
+
+                
+            }
+            table.appendChild(tr);
+    
+            tr = document.createElement("tr");
+    
+            week = 0;
+        }
+        this.shadowRoot.querySelector('.calendar').appendChild(table);
+        // this.shadowRoot.appendChild(table); 
+        this.changeActive();
+        this.changeHeader(this.date);
+        // this.shadowRoot.querySelector('date').textContent = this.date;
+        // getCurrentDate(document.getElementById("currentDate"), true);
+        // getCurrentDate(document.getElementById("date"), false);
+        this.shadowRoot.getElementById('month-header').innerHTML = this.months[this.date.getMonth()].substring(0, 3) + ' ' + this.date.getFullYear();
+    }
+
+    // setDate(form) {
+    //     let newDate = new Date(form.date.value);
+    //     date = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate()+1 );
+    //     generateCalendar();
+    //     return false;
+    // }
+     
+    changeHeader(dateHeader) {
+        const month = this.shadowRoot.getElementById("month-header");
+        if (month.childNodes[0]) {
+            month.removeChild(month.childNodes[0]);
+        }
+        const headerMonth = document.createElement("h1");
+        const textMonth = document.createTextNode(this.months[dateHeader.getMonth()].substring(0, 3) + " " + dateHeader.getFullYear());
+        headerMonth.appendChild(textMonth);
+        month.appendChild(headerMonth);
+    }
+    
+     
+    changeActive() {
+        let btnList = this.shadowRoot.querySelectorAll('div.active');
+        btnList.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        btnList = this.shadowRoot.querySelectorAll('btn-day');
+        for (let i = 0; i < btnList.length; i++) {
+            const btn = btnList[i];
+            if (btn.textContent === (date.getDate()).toString()) {
+                btn.classList.add('active');
+            }
+        }
+    }
+    // resetDate() {
+    //     date = new Date();
+    //     generateCalendar();
+    // }
+     
+    changeDate(div) {
+        this.newDay = parseInt(div.textContent);
+        this.date = new Date(this.date.getFullYear(), this.date.getMonth(), this.newDay);
+        this.generateCalendar(this.date);
+    } 
+    
+    isDateBeforeCurrentDate(year, month, day) {
+        const currentDate = new Date();
+        const selectedDate = new Date(year, month, day);
+        return selectedDate < currentDate;
+    }
+
     nextMonth() {
-        date = new Date(date.getFullYear(), date.getMonth() + 1, 1);
-        generateCalendar(date);
+        this.date = new Date(this.date.getFullYear(), this.date.getMonth() + 1, 1);
+        this.generateCalendar(this.date);
     }
     
     prevMonth() {
-        date = new Date(date.getFullYear(), date.getMonth() - 1, 1);
-        generateCalendar(date);
+        this.date = new Date(this.date.getFullYear(), this.date.getMonth() - 1, 1);
+        this.generateCalendar(this.date);
     }
+
+        connectedCallback() {
+            this.generateCalendar();
+            this.nextMonth();
+            this.prevMonth();
+            // this.changeDate();
+            //implementation
+        }
     
+        disconnectedCallback() {
+            //implementation
+        }
+    
+        attributeChangedCallback(name, oldVal, newVal) {
+            
+        }
+       
 
 
 }
