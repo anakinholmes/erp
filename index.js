@@ -152,13 +152,9 @@ template.innerHTML = `
         box-shadow: 0px 0px 10px rgba(149, 157, 165, 0.1), inset 0px 1px 1px #FFFFFF;
     }
     
-    
-    /* Basis */
-    
     .btn-small {
         min-width: 50px;
     }
-    
     
     .btn-day {
         font-family: 'Open Sans';
@@ -176,13 +172,7 @@ template.innerHTML = `
         border-radius: 10px;
         transition: 0.4s all;
     }
-    
-    .btn-day.active {
-        color: #FFF;
-        font-weight: 600;
-        z-index: 99;
-    }
-    
+        
     .btn-day.active::before {
         position: absolute;
         content: '';
@@ -321,6 +311,17 @@ template.innerHTML = `
     .container1{
         margin-left: 8em;
     }
+    input[type="radio"] {
+        opacity:0;
+        position:absolute;
+        z-index: 100;
+        transform: scale(2.5);
+    }
+    input[type=radio]:checked + label{
+        color: #FFF;
+        font-weight: 600;
+        background: var(--primary-color);
+    }
  
     @media only screen and (max-width: 750px) {
         .overflow-scroll{
@@ -371,7 +372,7 @@ template.innerHTML = `
                         <label for="" class="col-md-3 col-sm-5 col-form-label">Төрөл</label>
                         <div class="col-lg-6 col-md-8 col-sm-12"  >
                         <div class="btn-group float-left "  id="container"  style="margin: 4px 8px;" >
-                        <button class="btn btn-primary ">Үзлэг</button>
+                        <button class="btn btn-primary active">Үзлэг</button>
                         <button class="btn btn-primary ">Эмчилгээ</button>
                         </div>
                         
@@ -395,7 +396,7 @@ template.innerHTML = `
                                   </div>
                                   <div class="buttons">
                                     <button class="icon"><</button>
-                                    <button class="icon" onclick="nextMonth()">></button>
+                                    <button class="icon">></button>
                                   </div>
                                 </div>
                               </div>
@@ -409,7 +410,6 @@ template.innerHTML = `
                               <div class="overflow-scroll">
                                 <div class="row btn-group" >
                                   <div class="col">
-                                    <div class="d-flex flex-wrap" id="timep"> 
                                       <button class="btn timebtn btn-outline-primary " value="8:30">8:30 AM</button>
                                       <button class="btn timebtn btn-outline-primary" value="8:50">8:50 AM</button>
                                       <button class="btn timebtn btn-outline-primary" value="9:10">9:10 AM</button>
@@ -423,9 +423,7 @@ template.innerHTML = `
                                       <button class="btn timebtn btn-outline-primary" value="11:50">11:50 AM</button>
                                       <button class="btn timebtn btn-outline-primary" value="12:10">12:10 PM</button>
                                     </div>
-                                  </div>
                                   <div class="col">
-                                    <div class="d-flex flex-wrap" id="timep">  
                                       <button class="btn timebtn btn-outline-primary" value="12:30">12:30 PM</button>
                                       <button class="btn timebtn btn-outline-primary" value="12:50">12:50 PM</button>
                                       <button class="btn timebtn btn-outline-primary" value="13:10">13:10 PM</button>
@@ -438,7 +436,6 @@ template.innerHTML = `
                                       <button class="btn timebtn btn-outline-primary" value="16:30">16:30 PM</button>
                                       <button class="btn timebtn btn-outline-primary" value="16:50">16:50 PM</button>
                                       <button class="btn timebtn btn-outline-primary" value="17:10">17:10 PM</button>
-                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -481,12 +478,10 @@ class ErpAppointment extends HTMLElement{
         linkEl.href = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css';
         shadowRoot.appendChild(linkEl);
 
-        const container = shadowRoot.getElementById('container');
-        container.addEventListener('click', this.handleButtonClick);
-
-        
+        shadowRoot.getElementById('container').addEventListener('click', this.handleButtonClick);        
         shadowRoot.querySelector('.icon:first-child').addEventListener('click', this.prevMonth.bind(this));
         shadowRoot.querySelector('.icon:last-child').addEventListener('click', this.nextMonth.bind(this));
+        shadowRoot.querySelector('.timebtn').addEventListener('click', this.activateButton);
 
 
     }   
@@ -544,7 +539,8 @@ class ErpAppointment extends HTMLElement{
         let tr = document.createElement("tr");
         let td = '';
         let empty = '';
-        let btn = document.createElement('div');
+        let lbl = document.createElement('label');
+        let inpt = document.createElement('input');
         let week = 0;
      
         while (week < weekDay) {
@@ -559,20 +555,32 @@ class ErpAppointment extends HTMLElement{
             while (week < 7) {
                 td = document.createElement('td');
                 let text = document.createTextNode(i);
-                btn = document.createElement('div');
-                btn.className = "btn-day";
+                lbl = document.createElement('label');
+                inpt = document.createElement('input');
+                inpt.type = "radio";
+                inpt.name = "udur";
+                inpt.id = `udur${text}`;
+                inpt.value = `${text}`;
+                lbl.className = "btn-day";
+                lbl.setAttribute("for",`udur${text}`);
+                td.appendChild(inpt);
+
                 // btn.addEventListener('click',this.changeDate.bind(this));
                 week++;
     
                 if (i <= lastDay) {
                     if (this.isDateBeforeCurrentDate(this.date.getFullYear(), this.date.getMonth(), i+1)) {
-                        btn.appendChild(text);
-                        btn.classList.add('disabled');
+                        lbl.appendChild(text);
+                        lbl.classList.add('disabled');
                     } 
-                    else {
-                        btn.appendChild(text);
+                    // else if(this.isDateCurrentDate(this.date.getFullYear(), this.date.getMonth(), i+1)){
+                    //     inpt.checked = "checked";
+                    //     lbl.appendChild(text);
+                    // }
+                    else{
+                        lbl.appendChild(text);
                     }
-                    td.appendChild(btn)
+                    td.appendChild(lbl);
                     i++;
                 } else {
                     text = document.createTextNode(' ');
@@ -589,21 +597,10 @@ class ErpAppointment extends HTMLElement{
             week = 0;
         }
         this.shadowRoot.querySelector('.calendar').appendChild(table);
-        // this.shadowRoot.appendChild(table); 
-        this.changeActive();
         this.changeHeader(this.date);
-        // this.shadowRoot.querySelector('date').textContent = this.date;
-        // getCurrentDate(document.getElementById("currentDate"), true);
-        // getCurrentDate(document.getElementById("date"), false);
         this.shadowRoot.getElementById('month-header').innerHTML = this.months[this.date.getMonth()].substring(0, 3) + ' ' + this.date.getFullYear();
     }
 
-    // setDate(form) {
-    //     let newDate = new Date(form.date.value);
-    //     date = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate()+1 );
-    //     generateCalendar();
-    //     return false;
-    // }
      
     changeHeader(dateHeader) {
         const month = this.shadowRoot.getElementById("month-header");
@@ -615,32 +612,12 @@ class ErpAppointment extends HTMLElement{
         headerMonth.appendChild(textMonth);
         month.appendChild(headerMonth);
     }
-    
-     
-    changeActive() {
-        let btnList = this.shadowRoot.querySelectorAll('div.active');
-        btnList.forEach(btn => {
-            btn.classList.remove('active');
-        });
-        btnList = this.shadowRoot.querySelectorAll('btn-day');
-        for (let i = 0; i < btnList.length; i++) {
-            const btn = btnList[i];
-            if (btn.textContent === (date.getDate()).toString()) {
-                btn.classList.add('active');
-            }
-        }
+
+    isDateCurrentDate(year, month, day) {
+        const currentDate = new Date();
+        const selectedDate = new Date(year, month, day);
+        return selectedDate == currentDate;
     }
-    // resetDate() {
-    //     date = new Date();
-    //     generateCalendar();
-    // }
-     
-    changeDate(div) {
-        this.newDay = parseInt(div.textContent);
-        this.date = new Date(this.date.getFullYear(), this.date.getMonth(), this.newDay);
-        this.generateCalendar(this.date);
-    } 
-    
     isDateBeforeCurrentDate(year, month, day) {
         const currentDate = new Date();
         const selectedDate = new Date(year, month, day);
@@ -656,11 +633,20 @@ class ErpAppointment extends HTMLElement{
         this.date = new Date(this.date.getFullYear(), this.date.getMonth() - 1, 1);
         this.generateCalendar(this.date);
     }
+    activateButton = (event) => {
+        const buttons = this.shadowRoot.querySelectorAll('.timebtn');
+        buttons.forEach(button => {
+            buttons.classList.remove('active');
+        });
+        const clickedButton = event.target;
+        clickedButton.classList.add('active');
+    }
 
         connectedCallback() {
             this.generateCalendar();
             this.nextMonth();
             this.prevMonth();
+            this.activateButton();
             // this.changeDate();
             //implementation
         }
