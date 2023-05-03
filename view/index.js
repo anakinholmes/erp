@@ -372,9 +372,9 @@ template.innerHTML = `
                      
                         <label for="" class="col-md-3 col-sm-5 col-form-label">Төрөл</label>
                         <div class="col-lg-10 col-md-12"  >
-                        <div class="btn-group float-left "  id="container"  style="margin: 4px 8px;" >
-                        <button class="btn btn-primary active" value="examination">Үзлэг</button>
-                        <button class="btn btn-primary" value="treatment">Эмчилгээ</button>
+                        <form class="btn-group float-left "  id="container"  style="margin: 4px 8px;" >
+                        <button class="btn btn-primary active" value="Үзлэгийн цаг">Үзлэг</button>
+                        <button class="btn btn-primary" value="Эмчилгээний цаг">Эмчилгээ</button>
                         </div>
                         
                         <label for="" class="col-md-8 col-sm-5 col-form-label" id="em" >Цагийн мэдээлэл</label>
@@ -445,8 +445,8 @@ template.innerHTML = `
                                 <label for="" class="col-md-6 col-sm-3 col-form-label">Үргэлжилсэн хугацаа</label>
                                 <input class="symon" type="number">
                             </div>
-                            <button class="btn btn-primary savebtn ">Хадгалах</button>
-                        </div>
+                            <button class="btn btn-primary savebtn" id = "savebtn">Хадгалах</button>
+                        </form>
                 </div>
             </div>
         </div>
@@ -476,15 +476,15 @@ class ErpAppointment extends HTMLElement{
         shadowRoot.getElementById('timep').addEventListener('click', this.activateButton);    
         shadowRoot.querySelector('.icon:first-child').addEventListener('click', this.prevMonth.bind(this));
         shadowRoot.querySelector('.icon:last-child').addEventListener('click', this.nextMonth.bind(this));
-        shadowRoot.querySelector('.savebtn').addEventListener('click', this.redirectClick);
+        shadowRoot.getElementById('savebtn').addEventListener('click', this.redirectPage);
+      
         
+    
 
 
     }   
-redirectClick = (event)=>{
-    this.shadowRoot.location.href = "./secondary.html";
-}
 
+ 
     handleButtonClick = (event) => {
         const buttons = this.shadowRoot.querySelectorAll('.btn');
         buttons.forEach(button => {
@@ -493,6 +493,19 @@ redirectClick = (event)=>{
         const clickedButton = event.target;
         clickedButton.classList.add('active');
     }
+    activateButton = (event) => {
+        const button = this.shadowRoot.querySelectorAll('.timebtn');
+        button.forEach(button => {
+            // this.shadowRoot.querySelector('.timebtn').value
+            // if(isTimeBeforeCurent(this.date.getHours(), this.date.getMinutes())){
+            //     button.setAttribute('disabled', ' ');
+            // }            
+            button.classList.remove('active');
+        });
+        const clickedButton = event.target;
+        clickedButton.classList.add('active');
+    }
+
     activateButton = (event) => {
         const button = this.shadowRoot.querySelectorAll('.timebtn');
         button.forEach(button => {
@@ -569,10 +582,11 @@ redirectClick = (event)=>{
                 inpt = document.createElement('input');
                 inpt.type = "radio";
                 inpt.name = "udur";
-                inpt.id = `udur${text}`;
-                inpt.value = `${text}`;
+                inpt.id = `udur${i}`;
+                inpt.value = `${i}`;
+                inpt.className ="udur";
                 lbl.className = "btn-day";
-                lbl.setAttribute("for",`udur${text}`);
+                lbl.setAttribute("for",`udur${i}`);
                 td.appendChild(inpt);
 
                 // btn.addEventListener('click',this.changeDate.bind(this));
@@ -585,10 +599,6 @@ redirectClick = (event)=>{
                         inpt.setAttribute('disabled',' ');
                         lbl.classList.add('disabled');
                     } 
-                    // else if(this.isDateCurrentDate(this.date.getFullYear(), this.date.getMonth(), i+1)){
-                    //     inpt.checked = "checked";
-                    //     lbl.appendChild(text);
-                    // }
                     else{
                         lbl.appendChild(text);
                     }
@@ -628,7 +638,7 @@ redirectClick = (event)=>{
     isDateCurrentDate(year, month, day) {
         const currentDate = new Date();
         const selectedDate = new Date(year, month, day);
-        return selectedDate == currentDate;
+        return selectedDate === currentDate;
     }
     isDateBeforeCurrentDate(year, month, day) {
         const currentDate = new Date();
@@ -659,11 +669,26 @@ redirectClick = (event)=>{
         const selectedTime = new Date(hours, minute);
         return selectedTime < currentTime;
     }
+    displayRadioValue() {
+        let radioVal;
+        const radios = this.shadowRoot.querySelectorAll('input[name="udur"]');
+        radios.forEach(radio => {
+          radio.addEventListener('click', function () {
+            radioVal = radio.value;
+            console.log(radioVal);
+          });
+        });
+    }
+    redirectPage(){
+ 
+        window.location.href = "./appointment.html";
+    }
 
         connectedCallback() {
             this.generateCalendar();
             this.nextMonth();
             this.prevMonth();
+            this.displayRadioValue();
             // this.changeDate();
             //implementation
         }
@@ -673,6 +698,7 @@ redirectClick = (event)=>{
         }
     
         attributeChangedCallback(name, oldVal, newVal) {
+            shadowRoot.querySelector('.udur').addEventListener('click', this.displayRadioValue);  
             
         }
        
