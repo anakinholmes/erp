@@ -373,8 +373,8 @@ template.innerHTML = `
                         <label for="" class="col-md-3 col-sm-5 col-form-label">Төрөл</label>
                         <div class="col-lg-10 col-md-12"  >
                         <form class="btn-group float-left "  id="container"  style="margin: 4px 8px;" >
-                        <button class="btn btn-primary active" value="Үзлэгийн цаг">Үзлэг</button>
-                        <button class="btn btn-primary" value="Эмчилгээний цаг">Эмчилгээ</button>
+                        <button class="btn btn-primary typebtn active " value="Үзлэгийн цаг">Үзлэг</button>
+                        <button class="btn btn-primary typebtn " value="Эмчилгээний цаг">Эмчилгээ</button>
                         </div>
                         
                         <label for="" class="col-md-8 col-sm-5 col-form-label" id="em" >Цагийн мэдээлэл</label>
@@ -476,13 +476,14 @@ class ErpAppointment extends HTMLElement{
         shadowRoot.getElementById('timep').addEventListener('click', this.activateButton);    
         shadowRoot.querySelector('.icon:first-child').addEventListener('click', this.prevMonth.bind(this));
         shadowRoot.querySelector('.icon:last-child').addEventListener('click', this.nextMonth.bind(this));
+        shadowRoot.getElementById('savebtn').addEventListener('click', this.redirectPage.bind(this)); 
         
     }   
 
  
     handleButtonClick = (event) => {
-        const buttons = this.shadowRoot.querySelectorAll('.btn');
-        buttons.forEach(button => {
+        const button = this.shadowRoot.querySelectorAll('.typebtn');
+        button.forEach(button => {          
             button.classList.remove('active');
         });
         const clickedButton = event.target;
@@ -491,10 +492,7 @@ class ErpAppointment extends HTMLElement{
     activateButton = (event) => {
         const button = this.shadowRoot.querySelectorAll('.timebtn');
         button.forEach(button => {
-            // this.shadowRoot.querySelector('.timebtn').value
-            // if(isTimeBeforeCurent(this.date.getHours(), this.date.getMinutes())){
-            //     button.setAttribute('disabled', ' ');
-            // }            
+          
             button.classList.remove('active');
         });
         const clickedButton = event.target;
@@ -503,11 +501,7 @@ class ErpAppointment extends HTMLElement{
 
     activateButton = (event) => {
         const button = this.shadowRoot.querySelectorAll('.timebtn');
-        button.forEach(button => {
-            // this.shadowRoot.querySelector('.timebtn').value
-            // if(isTimeBeforeCurent(this.date.getHours(), this.date.getMinutes())){
-            //     button.setAttribute('disabled', ' ');
-            // }            
+        button.forEach(button => {          
             button.classList.remove('active');
         });
         const clickedButton = event.target;
@@ -665,33 +659,37 @@ class ErpAppointment extends HTMLElement{
         return selectedTime < currentTime;
     }
     displayRadioValue() {
-        let radioVal;
-        const radios = this.shadowRoot.querySelectorAll('input[name="udur"]');
-        radios.forEach(radio => {
-          radio.addEventListener('click', function () {
-            radioVal = radio.value;
-            console.log(radioVal);
-          });
-        });
+        const radioButtons = this.shadowRoot.querySelectorAll('.udur');
+
+        let selectedValue = '';
+        for (const radioButton of radioButtons) {
+          if (radioButton.checked) {
+            selectedValue = radioButton.value;
+            break;
+          }
+        }
+        return selectedValue
     }
     redirectPage(){
         let type = this.shadowRoot.querySelector(".btn.btn-primary.active").value;
-        let onsar = this.shadowRoot.querySelector("#month-header").value;
-        let tsag = this.shadowRoot.querySelector(".btn.timebtn.btn-primary.active").value;
+        let onsar = this.shadowRoot.querySelector("#month-header").innerHTML;
+        let udur  = this.displayRadioValue();
+        let tsag = this.shadowRoot.querySelector(".timebtn.active").value;
         let symptoms = this.shadowRoot.querySelector(".sym").value;
         let symptomsOnset = this.shadowRoot.querySelector(".symon").value;
+        console.log(onsar);
 
-        // Create data object
         let data = {
             type: type,
             onsar: onsar,
+            udur:udur,
             tsag: tsag,
             symptoms: symptoms,
             symptomsOnset: symptomsOnset
         };
 
-  // Save data to local storage
-  localStorage.setItem("myData", JSON.stringify(data));
+
+  localStorage.setItem("myData", JSON.stringify([data.type,data.udur,data.onsar,data.tsag]));
         window.location.replace('./appointment.html');
     }
 
@@ -699,16 +697,14 @@ class ErpAppointment extends HTMLElement{
             this.generateCalendar();
             this.nextMonth();
             this.prevMonth();
-            this.displayRadioValue();
+
    
         }
     
         disconnectedCallback() {
         }
     
-        attributeChangedCallback(name, oldVal, newVal) {
-            shadowRoot.querySelector('.udur').addEventListener('click', this.displayRadioValue);  
-            shadowRoot.getElementById('savebtn').addEventListener('click', this.redirectPage); 
+        attributeChangedCallback(name, oldVal, newVal) {  
         }
 }
     
