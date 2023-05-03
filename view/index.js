@@ -476,12 +476,7 @@ class ErpAppointment extends HTMLElement{
         shadowRoot.getElementById('timep').addEventListener('click', this.activateButton);    
         shadowRoot.querySelector('.icon:first-child').addEventListener('click', this.prevMonth.bind(this));
         shadowRoot.querySelector('.icon:last-child').addEventListener('click', this.nextMonth.bind(this));
-        shadowRoot.getElementById('savebtn').addEventListener('click', this.redirectPage);
-      
         
-    
-
-
     }   
 
  
@@ -680,8 +675,24 @@ class ErpAppointment extends HTMLElement{
         });
     }
     redirectPage(){
- 
-        window.location.href = "./appointment.html";
+        let type = this.shadowRoot.querySelector(".btn.btn-primary.active").value;
+        let onsar = this.shadowRoot.querySelector("#month-header").value;
+        let tsag = this.shadowRoot.querySelector(".btn.timebtn.btn-primary.active").value;
+        let symptoms = this.shadowRoot.querySelector(".sym").value;
+        let symptomsOnset = this.shadowRoot.querySelector(".symon").value;
+
+        // Create data object
+        let data = {
+            type: type,
+            onsar: onsar,
+            tsag: tsag,
+            symptoms: symptoms,
+            symptomsOnset: symptomsOnset
+        };
+
+  // Save data to local storage
+  localStorage.setItem("myData", JSON.stringify(data));
+        window.location.replace('./appointment.html');
     }
 
         connectedCallback() {
@@ -689,22 +700,16 @@ class ErpAppointment extends HTMLElement{
             this.nextMonth();
             this.prevMonth();
             this.displayRadioValue();
-            // this.changeDate();
-            //implementation
+   
         }
     
         disconnectedCallback() {
-            //implementation
         }
     
         attributeChangedCallback(name, oldVal, newVal) {
             shadowRoot.querySelector('.udur').addEventListener('click', this.displayRadioValue);  
-            
+            shadowRoot.getElementById('savebtn').addEventListener('click', this.redirectPage); 
         }
-       
-
-
 }
     
-
 customElements.define("erp-appointment", ErpAppointment);
