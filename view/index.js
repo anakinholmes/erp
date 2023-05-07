@@ -372,10 +372,11 @@ template.innerHTML = `
                      
                         <label for="" class="col-md-3 col-sm-5 col-form-label">Төрөл</label>
                         <div class="col-lg-10 col-md-12"  >
-                        <form class="btn-group float-left "  id="container"  style="margin: 4px 8px;" >
-                        <button class="btn btn-primary typebtn active " value="Үзлэгийн цаг">Үзлэг</button>
+                        <div class="btn-group float-left" id = "container" style="margin: 4px 8px;">
+                        <button class="btn btn-primary typebtn active" value="Үзлэгийн цаг">Үзлэг</button>
                         <button class="btn btn-primary typebtn " value="Эмчилгээний цаг">Эмчилгээ</button>
                         </div>
+                        
                         
                         <label for="" class="col-md-8 col-sm-5 col-form-label" id="em" >Цагийн мэдээлэл</label>
                         
@@ -446,7 +447,7 @@ template.innerHTML = `
                                 <input class="symon" type="number">
                             </div>
                             <button class="btn btn-primary savebtn" id = "savebtn">Хадгалах</button>
-                        </form>
+                        
                 </div>
             </div>
         </div>
