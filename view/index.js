@@ -410,30 +410,30 @@ template.innerHTML = `
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M9 1.25C9.41421 1.25 9.75 1.58579 9.75 2V3.26061C10.4192 3.25 11.1628 3.25 11.9889 3.25H12.0111C12.8372 3.25 13.5808 3.25 14.25 3.26061V2C14.25 1.58579 14.5858 1.25 15 1.25C15.4142 1.25 15.75 1.58579 15.75 2V3.31358C17.2619 3.40837 18.4234 3.65335 19.3798 4.34815C19.8679 4.70281 20.2972 5.13209 20.6518 5.62023C21.4537 6.7239 21.6564 8.10088 21.7206 9.97432C21.75 10.8315 21.75 11.8289 21.75 12.989V13.011C21.75 14.1711 21.75 15.1685 21.7206 16.0257C21.6564 17.8991 21.4537 19.2761 20.6518 20.3798C20.2972 20.8679 19.8679 21.2972 19.3798 21.6518C18.2761 22.4537 16.8991 22.6564 15.0257 22.7206C14.1684 22.75 13.171 22.75 12.0108 22.75H11.9547C10.1182 22.75 8.67861 22.75 7.53648 22.6263C6.37094 22.5 5.42656 22.2377 4.62024 21.6518C4.13209 21.2972 3.70281 20.8679 3.34815 20.3798C2.76232 19.5734 2.50001 18.6291 2.37373 17.4635C2.24999 16.3214 2.24999 14.8818 2.25 13.0452L2.25 12.9889C2.25 11.8289 2.25 10.8315 2.27937 9.97432C2.34356 8.10087 2.5463 6.7239 3.34815 5.62023C3.70281 5.13209 4.13209 4.70281 4.62024 4.34815C5.57655 3.65335 6.73808 3.40837 8.25 3.31358V2C8.25 1.58579 8.58579 1.25 9 1.25ZM8.25 4.81725C6.88795 4.91092 6.10177 5.12585 5.50191 5.56168C5.14111 5.82382 4.82382 6.14111 4.56168 6.50191C4.12585 7.10177 3.91092 7.88795 3.81725 9.25H20.1827C20.0891 7.88795 19.8741 7.10177 19.4383 6.50191C19.1762 6.14111 18.8589 5.82382 18.4981 5.56168C17.8982 5.12585 17.1121 4.91092 15.75 4.81725V5C15.75 5.41421 15.4142 5.75 15 5.75C14.5858 5.75 14.25 5.41421 14.25 5V4.76079C13.5904 4.75005 12.8476 4.75 12 4.75C11.1524 4.75 10.4096 4.75005 9.75 4.76079V5C9.75 5.41421 9.41421 5.75 9 5.75C8.58579 5.75 8.25 5.41421 8.25 5V4.81725ZM20.2392 10.75H3.76079C3.75005 11.4096 3.75 12.1524 3.75 13C3.75 14.8916 3.75103 16.25 3.865 17.302C3.97745 18.3399 4.19259 18.9901 4.56168 19.4981C4.82382 19.8589 5.14111 20.1762 5.50191 20.4383C6.00992 20.8074 6.66013 21.0225 7.69805 21.135C8.74999 21.249 10.1084 21.25 12 21.25C12.8483 21.25 13.5918 21.2499 14.2518 21.2392C14.2562 20.7645 14.271 20.4151 14.3208 20.1005C14.7105 17.6401 16.6401 15.7105 19.1005 15.3208C19.4151 15.271 19.7645 15.2562 20.2392 15.2518C20.25 14.5918 20.25 13.8483 20.25 13C20.25 12.1524 20.25 11.4096 20.2392 10.75ZM20.1826 16.7528C19.7776 16.7575 19.5402 16.7699 19.3352 16.8023C17.5166 17.0904 16.0904 18.5166 15.8023 20.3352C15.7699 20.5402 15.7575 20.7776 15.7528 21.1826C17.1131 21.0888 17.8986 20.8738 18.4981 20.4383C18.8589 20.1762 19.1762 19.8589 19.4383 19.4981C19.8738 18.8986 20.0888 18.1131 20.1826 16.7528Z" fill="currentColor" />
                               </svg>  Цаг сонгох</label>
                                   <div class="row overflow-scroll" id="timep">
-                                      <button class="btn timebtn btn-primary " value="08:30">08:30 AM</button>
-                                      <button class="btn timebtn btn-primary" value="08:50">08:50 AM</button>
-                                      <button class="btn timebtn btn-primary" value="09:10">09:10 AM</button>
-                                      <button class="btn timebtn btn-primary" value="09:30">09:30 AM</button>
-                                      <button class="btn timebtn btn-primary" value="09:50">09:50 AM</button>
-                                      <button class="btn timebtn btn-primary" value="10:10">10:10 AM</button>
-                                      <button class="btn timebtn btn-primary" value="10:30">10:30 AM</button>
-                                      <button class="btn timebtn btn-primary" value="10:50">10:50 AM</button>
-                                      <button class="btn timebtn btn-primary" value="11:10">11:10 AM</button>
-                                      <button class="btn timebtn btn-primary" value="11:30">11:30 AM</button>
-                                      <button class="btn timebtn btn-primary" value="11:50">11:50 AM</button>
-                                      <button class="btn timebtn btn-primary" value="12:10">12:10 PM</button>
-                                      <button class="btn timebtn btn-primary" value="12:30">12:30 PM</button>
-                                      <button class="btn timebtn btn-primary" value="12:50">12:50 PM</button>
-                                      <button class="btn timebtn btn-primary" value="13:10">13:10 PM</button>
-                                      <button class="btn timebtn btn-primary" value="14:30">14:30 PM</button>
-                                      <button class="btn timebtn btn-primary" value="14:50">14:50 PM</button>
-                                      <button class="btn timebtn btn-primary" value="15:10">15:10 PM</button>
-                                      <button class="btn timebtn btn-primary" value="15:30">15:30 PM</button>
-                                      <button class="btn timebtn btn-primary" value="15:50">15:50 PM</button>
-                                      <button class="btn timebtn btn-primary" value="16:10">16:10 PM</button>
-                                      <button class="btn timebtn btn-primary" value="16:30">16:30 PM</button>
-                                      <button class="btn timebtn btn-primary" value="16:50">16:50 PM</button>
-                                      <button class="btn timebtn btn-primary" value="17:10">17:10 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "1" value="08:30">08:30 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "2" value="08:50">08:50 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "3" value="09:10">09:10 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "4" value="09:30">09:30 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "5" value="09:50">09:50 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "6" value="10:10">10:10 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "7" value="10:30">10:30 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "8" value="10:50">10:50 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "9" value="11:10">11:10 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "10" value="11:30">11:30 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "11" value="11:50">11:50 AM</button>
+                                      <button class="btn timebtn btn-primary" id = "12" value="12:10">12:10 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "13" value="12:30">12:30 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "14" value="12:50">12:50 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "15" value="13:10">13:10 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "16" value="14:30">14:30 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "17" value="14:50">14:50 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "18" value="15:10">15:10 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "19" value="15:30">15:30 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "20" value="15:50">15:50 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "21" value="16:10">16:10 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "22" value="16:30">16:30 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "23" value="16:50">16:50 PM</button>
+                                      <button class="btn timebtn btn-primary" id = "24" value="17:10">17:10 PM</button>
                               </div>
                             </div>
                               </div>
@@ -455,9 +455,7 @@ template.innerHTML = `
     </main>
 `
 
-
-
-class ErpAppointment extends HTMLElement{
+export class ErpAppointment extends HTMLElement{
     constructor(){
         super();
 
@@ -508,16 +506,6 @@ class ErpAppointment extends HTMLElement{
         const clickedButton = event.target;
         clickedButton.classList.add('active');
     }
-    //  getCurrentDate(element, asString) {
-    //     if (element) {
-    //         if (asString) {
-    //             return element.textContent = weekdays[date.getDay()] + date.getDate()  + months[date.getMonth()]  + date.getFullYear();
-    //         }
-    //         return element.value = date.toISOString().substr(0, 10);
-    //     }
-    //     return date;
-    // }
-
     generateCalendar() {
         const calendar = this.shadowRoot.getElementById('calendar')
         if (calendar) {
@@ -578,8 +566,6 @@ class ErpAppointment extends HTMLElement{
                 lbl.className = "btn-day";
                 lbl.setAttribute("for",`udur${i}`);
                 td.appendChild(inpt);
-
-                // btn.addEventListener('click',this.changeDate.bind(this));
                 week++;
     
                 if (i <= lastDay) {
@@ -645,15 +631,6 @@ class ErpAppointment extends HTMLElement{
         this.date = new Date(this.date.getFullYear(), this.date.getMonth() - 1, 1);
         this.generateCalendar(this.date);
     }
-
-    // disableTimeButton(){
-    //     const button = this.shadowRoot.querySelectorAll('.timebtn');
-    //     button.forEach(button => { 
-    //         if(isTimeBeforeCurent(this.date.getHours(), this.date.getMinutes())){
-    //             button.setAttribute('disabled', ' ');
-            
-    //     }});
-    // }
     isTimeBeforeCurent(hours, minute){
         const currentTime = new Date();
         const selectedTime = new Date(hours, minute);
@@ -678,7 +655,6 @@ class ErpAppointment extends HTMLElement{
         let tsag = this.shadowRoot.querySelector(".timebtn.active").value;
         let symptoms = this.shadowRoot.querySelector(".sym").value;
         let symptomsOnset = this.shadowRoot.querySelector(".symon").value;
-        console.log(onsar);
 
         let data = {
             type: type,
@@ -686,20 +662,42 @@ class ErpAppointment extends HTMLElement{
             udur:udur,
             tsag: tsag,
             symptoms: symptoms,
-            symptomsOnset: symptomsOnset
+            symptomsOnset: symptomsOnset,
+            createdAt: new Date(Date.now())
         };
-
-
-  localStorage.setItem("myData", JSON.stringify([data.type,data.udur,data.onsar,data.tsag]));
+        console.log(data);
+        fetch('http://localhost:3006/appointment/', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        })
+        localStorage.setItem("myData", JSON.stringify([data.type,data.udur,data.onsar,data.tsag]));
         window.location.replace('./appointment.html');
     }
+    disableTimeAndDate(){
+        fetch('http://localhost:8069/hospital_appointment/get_all_requests_exam', {
+            method: 'GET',
+            mode:"no-cors",
+            headers: {
+            'Content-Type': 'application/json',
+            'Cookie': 'session_id=6d05f0fc0662327f2c0947989fe0c689c3a48834'},
+            body:{"jsonrpc": "2.0","params":{}}})
+        .then(response => response.json())
+        .then(data => {
+            console.log(JSON.stringify(data));
+            map.set(id, "clsDisable");
+            
+            this.querySelector().childNodes.forEach(el=>map.he)
 
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
         connectedCallback() {
             this.generateCalendar();
             this.nextMonth();
             this.prevMonth();
-
-   
         }
     
         disconnectedCallback() {
@@ -708,5 +706,4 @@ class ErpAppointment extends HTMLElement{
         attributeChangedCallback(name, oldVal, newVal) {  
         }
 }
-    
 customElements.define("erp-appointment", ErpAppointment);
